@@ -2,34 +2,33 @@ package com.technovanzahackathon.tripistant;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.technovanzahackathon.tripistant.TripChecklists.*;
+
+import com.technovanzahackathon.tripistant.TripChecklists.RequestResultCode;
+import com.technovanzahackathon.tripistant.TripChecklists.TripChecklists;
+import com.technovanzahackathon.tripistant.TripChecklists.Trips;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 	private static final int REQUEST_STORAGE_PERMISSION = 0;
 	private TextView textEmpty;
@@ -75,14 +74,22 @@ public class MainActivity extends AppCompatActivity {
 	String primaryThemeName;
 
 	private static final String EXTRA_NOTE = "EXTRA_CHECK";
-    private static final String EXTRA_NOTE1 = "EXTRA_CHECK1";
+	private static final String EXTRA_NOTE1 = "EXTRA_CHECK1";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+		setContentView(R.layout.activity_navigation_drawer);
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+		drawer.setDrawerListener(toggle);
+		toggle.syncState();
+
+		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		navigationView.setNavigationItemSelectedListener(this);
 		databaseHelper = new DatabaseHelper(getApplicationContext());
 
 		textEmpty = (TextView) findViewById(R.id.textEmpty);
@@ -111,12 +118,6 @@ public class MainActivity extends AppCompatActivity {
 
 	}
 
-	public static boolean isTablet(Context context) {
-		return (context.getResources().getConfiguration().screenLayout
-				& Configuration.SCREENLAYOUT_SIZE_MASK)
-				>= Configuration.SCREENLAYOUT_SIZE_LARGE;
-	}
-
 	public void sortList1(Comparator<Trips> noteComparator) {
 		Collections.sort(notesData, noteComparator);
 		checkAdapter.notifyDataSetChanged();
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onItemClick(int position, View v) {
 				final Trips note = notesData.get(position);
-				Intent intent=new Intent(MainActivity.this, TripActivity.class);
+				Intent intent = new Intent(MainActivity.this, TripActivity.class);
 				intent.putExtra(EXTRA_NOTE, note);
 				startActivityForResult(intent, RequestResultCode.REQUEST_CODE_EDIT_CHECK);
 			}
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	@Override
-	protected void onResume(){
+	protected void onResume() {
 		super.onResume();
 		checkAdapter.notifyDataSetChanged();
 	}
@@ -153,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
 	private void setupTripChecklistsAdapter() {
 		notesData = databaseHelper.getAllTripsO();
-		checkAdapter = new TripsAdapter(notesData,context,MainActivity.this);
+		checkAdapter = new TripsAdapter(notesData, context, MainActivity.this);
 		recyclerView.setAdapter(checkAdapter);
 	}
 
@@ -171,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode== RequestResultCode.REQUEST_CODE_EDIT_TRIP){
-			if (resultCode==RESULT_OK){
+		if (requestCode == RequestResultCode.REQUEST_CODE_EDIT_TRIP) {
+			if (resultCode == RESULT_OK) {
 				Log.d("TripChecklistsActivity", "RESULT_OK");
 				TripChecklists note1 = (TripChecklists) data.getSerializableExtra(EXTRA_NOTE);
 				note1.getTitle();
@@ -192,11 +193,11 @@ public class MainActivity extends AppCompatActivity {
 				Trips note = (Trips) data.getSerializableExtra(EXTRA_NOTE);
 				long noteId = databaseHelper.createTripO(note);
 				note.setTripId(noteId);
-				notesData.add(0,note);
+				notesData.add(0, note);
 				updateView();
 				checkAdapter.notifyDataSetChanged();
 			}
-		}else if(resultCode == RESULT_FIRST_USER){
+		} else if (resultCode == RESULT_FIRST_USER) {
 			addNote(data);
 		}
 
@@ -205,9 +206,9 @@ public class MainActivity extends AppCompatActivity {
 
 	private void addNote(Intent data) {
 		Trips note = (Trips) data.getSerializableExtra(EXTRA_NOTE);
-        long noteId = databaseHelper.createTripO(note);
-        note.setTripId(noteId);
-        notesData.add(note);
+		long noteId = databaseHelper.createTripO(note);
+		note.setTripId(noteId);
+		notesData.add(note);
 		updateView();
 		checkAdapter.notifyDataSetChanged();
 	}
@@ -222,8 +223,8 @@ public class MainActivity extends AppCompatActivity {
 				note.setTripdest(updatedNote.getTripdest());
 				note.setTripdate(updatedNote.getTripdate());
 				note.setTriptime(updatedNote.getTriptime());
-                note.setTripdatetimestatus(updatedNote.getTripdatetimestatus());
-            }
+				note.setTripdatetimestatus(updatedNote.getTripdatetimestatus());
+			}
 		}
 		checkAdapter.notifyDataSetChanged();
 	}
@@ -234,8 +235,38 @@ public class MainActivity extends AppCompatActivity {
 		notesData.remove(deletedNote);
 		updateView();
 		checkAdapter.notifyDataSetChanged();
-		Toast.makeText(MainActivity.this, "TripChecklists Deleted.", Toast.LENGTH_LONG).show();
 	}
 
+	@Override
+	public void onBackPressed() {
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		if (drawer.isDrawerOpen(GravityCompat.START)) {
+			drawer.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
+		}
+	}
+
+
+	@SuppressWarnings("StatementWithEmptyBody")
+	@Override
+	public boolean onNavigationItemSelected(MenuItem item) {
+		// Handle navigation view item clicks here.
+		int id = item.getItemId();
+
+		if (id == R.id.nav_camera) {
+			// Handle the camera action
+		} else if (id == R.id.nav_gallery) {
+
+		} else if (id == R.id.nav_share) {
+
+		} else if (id == R.id.nav_send) {
+
+		}
+
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawer.closeDrawer(GravityCompat.START);
+		return true;
+	}
 
 }

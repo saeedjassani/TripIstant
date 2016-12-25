@@ -5,15 +5,13 @@ import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabSelectedListener;
 import com.technovanzahackathon.tripistant.Expense.ExpenseActivity;
 import com.technovanzahackathon.tripistant.TripChecklists.ChecklistFragment;
-import com.technovanzahackathon.tripistant.TripChecklists.TripChecklists;
 import com.technovanzahackathon.tripistant.TripChecklists.Trips;
 
 /**
@@ -32,11 +30,13 @@ public class TripActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trip_activity);
 
+/*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_trip);
         setSupportActionBar(toolbar);
+*/
 
         note = (Trips) getIntent().getSerializableExtra(EXTRA_NOTE);
-        toolbar.setTitle(note.getTripname());
+//        toolbar.setTitle(note.getTripname());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinatelayout);

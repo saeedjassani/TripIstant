@@ -1,187 +1,197 @@
 <merge
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fitsSystemWindows="true"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-            android:id="@+id/add_trip_toolbar"
+        android:id="@+id/add_trip_toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:minHeight="?actionBarSize"
+        app:navigationContentDescription="@string/abc_action_bar_up_description"
+        app:navigationIcon="?homeAsUpIndicator"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100.0dip"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="250dp"
-            android:minHeight="?actionBarSize"
-            app:navigationIcon="?homeAsUpIndicator"
-            android:fitsSystemWindows="true"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:background="@color/colorPrimary"
-            app:navigationContentDescription="@string/abc_action_bar_up_description" />
-
-    <ScrollView android:scrollbars="none"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="25.0dip"
-                android:overScrollMode="never">
-
-        <LinearLayout android:orientation="vertical"
-                      android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:weightSum="1">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <android.support.v7.widget.CardView
-                    android:id="@+id/card_submit"
+                android:id="@+id/card_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2.0dip"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip"
+                android:layout_marginTop="60.0dip">
+
+                <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8.0dip"
-                    android:layout_marginTop="60.0dip"
-                    android:layout_marginRight="8.0dip"
-                    android:layout_marginBottom="2.0dip">
-
-                <LinearLayout android:orientation="vertical"
-                              android:layout_width="fill_parent"
-                              android:layout_height="wrap_content">
+                    android:orientation="vertical">
 
                     <TextView
-                            android:id="@+id/submittext"
-                            android:textSize="26.0sp"
-                            android:textColor="#324143"
-                            android:layout_width="wrap_content"
+                        android:id="@+id/submittext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32.0dip"
+                        android:layout_marginRight="32.0dip"
+                        android:layout_marginTop="32.0dip"
+                        android:text="Add Trip"
+                        android:textColor="#324143"
+                        android:textSize="26.0sp"/>
+<!--
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:autoLink="web"
+                        android:paddingLeft="35dp"
+                        android:text="Trip Name"/>
+-->
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/inputname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp">
+
+                        <EditText
+                            android:id="@+id/tripname"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="32.0dip"
-                            android:layout_marginTop="32.0dip"
-                            android:layout_marginRight="32.0dip"
-                            android:text="Add Trip" />
-
-                    <TextView
-                            android:id="@+id/name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:autoLink="web"
-                            android:layout_marginTop="20dp"
-                            android:paddingLeft="35dp"
-                            android:text="Trip Name" />
-
-                    <android.support.design.widget.TextInputLayout
-                            android:id="@+id/inputname"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp">
-
-                        <EditText
-                                android:id="@+id/tripname"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32.0dip"
-                                android:layout_marginRight="16.0dip"
-                                android:tag="tint_accent_color,textsize_body"
-                                android:hint="Trip Name" />
+                            android:layout_marginRight="16.0dip"
+                            android:hint="Trip Name"
+                            android:tag="tint_accent_color,textsize_body"/>
 
                     </android.support.design.widget.TextInputLayout>
 
+<!--
                     <TextView
-                            android:id="@+id/linkt"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:autoLink="web"
-                            android:layout_marginTop="10dp"
-                            android:paddingLeft="35dp"
-                            android:text="Source &amp; Destination" />
+                        android:id="@+id/linkt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="web"
+                        android:paddingLeft="35dp"
+                        android:text="Source &amp; Destination"/>
 
+-->
                     <android.support.design.widget.TextInputLayout
-                            android:id="@+id/inputlink"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp">
+                        android:id="@+id/inputlink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp">
 
                         <EditText
-                                android:id="@+id/sourcename"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32.0dip"
-                                android:layout_marginRight="16.0dip"
-                                android:tag="tint_accent_color,textsize_body"
-                                android:hint="Source" />
+                            android:id="@+id/sourcename"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="32.0dip"
+                            android:layout_marginRight="16.0dip"
+                            android:hint="Source"
+                            android:tag="tint_accent_color,textsize_body"/>
 
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
-                            android:id="@+id/inputlink1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp">
+                        android:id="@+id/inputlink1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp">
 
                         <EditText
-                                android:id="@+id/destinationname"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32.0dip"
-                                android:layout_marginRight="16.0dip"
-                                android:tag="tint_accent_color,textsize_body"
-                                android:hint="Destination" />
+                            android:id="@+id/destinationname"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="32.0dip"
+                            android:layout_marginRight="16.0dip"
+                            android:hint="Destination"
+                            android:tag="tint_accent_color,textsize_body"/>
 
                     </android.support.design.widget.TextInputLayout>
 
                     <TextView
-                            android:id="@+id/link2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:autoLink="web"
-                            android:layout_marginTop="10dp"
-                            android:paddingLeft="35dp"
-                            android:text="Trip Date" />
+                        android:id="@+id/link2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:autoLink="web"
+                        android:paddingLeft="35dp"
+                        android:text="Trip Date"/>
 
                     <LinearLayout
-                            android:layout_width="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32.0dip"
+                        android:layout_marginRight="16.0dip"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/date_btn"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginLeft="32.0dip"
-                            android:layout_marginRight="16.0dip">
+                            android:layout_marginRight="40dp"
+                            android:layout_weight="0.5"
+                            android:background="@android:color/transparent"
+                            android:text="Date"/>
 
                         <Button
-                                android:id="@+id/date_btn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:background="@android:color/transparent"
-                                android:layout_marginRight="40dp"
-                                android:text="Date"/>
-
-                        <Button
-                                android:id="@+id/time_btn"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@android:color/transparent"
-                                android:layout_weight="0.5"
-                                android:text="Time"/>
+                            android:id="@+id/time_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@android:color/transparent"
+                            android:text="Time"/>
 
                     </LinearLayout>
 
-                    <Button android:textSize="14.0sp"
-                            android:textColor="#2979FF"
-                            android:layout_gravity="end"
-                            android:id="@+id/submit"
-                            android:paddingLeft="8.0dip"
-                            android:paddingRight="8.0dip"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="32.0dip"
-                            android:layout_marginTop="12.0dip"
-                            android:layout_marginRight="32.0dip"
-                            android:layout_marginBottom="15.0dip"
-                            android:text="ADD TRIP"
-                            android:textAllCaps="true"
-                            android:tag="tint_accent_color"
-                            style="?android:attr/buttonBarButtonStyle" />
+                    <Button
+                        android:id="@+id/submit"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="15.0dip"
+                        android:layout_marginLeft="32.0dip"
+                        android:layout_marginRight="32.0dip"
+                        android:layout_marginTop="12.0dip"
+                        android:paddingLeft="8.0dip"
+                        android:paddingRight="8.0dip"
+                        android:tag="tint_accent_color"
+                        android:text="ADD TRIP"
+                        android:textAllCaps="true"
+                        android:textColor="#2979FF"
+                        android:textSize="14.0sp"/>
 
                     <TextView
-                            android:id="@+id/textDate"
-                            android:visibility="gone"
-                            android:layout_width="match_parent" android:layout_height="match_parent"/>
+                        android:id="@+id/textDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"/>
 
                     <TextView
-                            android:id="@+id/textTime"
-                            android:visibility="gone"
-                            android:layout_width="match_parent" android:layout_height="match_parent"/>
+                        android:id="@+id/textTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
 

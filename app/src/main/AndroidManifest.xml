@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -37,15 +38,17 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".AddTripActivity"/>
-        <activity android:name=".TripActivity"/>
+        <activity android:name=".TripActivity"
+            android:theme="@style/AppTheme.Actionbar"
+            />
 
         <receiver android:name=".MyReceiver"/>
 
         <service android:name=".MyNewIntentService"/>
 
         <activity
-            android:theme="@style/AppTheme.Actionbar"
-            android:name=".SightsActivity">
+            android:name=".SightsActivity"
+            android:theme="@style/AppTheme.Actionbar">
         </activity>
 
         <receiver android:name=".AutoDismissReceiver"/>
