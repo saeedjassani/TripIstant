@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 	Context context;
 
 	Button btnyes1, btnyes2, btnyes3, btnyes4, btnno1, btnno2, btnno3, btndismiss1, btndismiss2, btndismiss3, btndismiss4, btncheck, btnexpense, btnalarm, btnphoto, btnminidi, btncab;
-	RelativeLayout rl1,rl2,rl3,rl4,rl5,rl6,rl7,rl8,rl9,rl10;
+	RelativeLayout rl1, rl2, rl3, rl4, rl5, rl6, rl7, rl8, rl9, rl10;
 	String date, time;
 	private static final DateFormat DATETIME_FORMAT = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM);
 
@@ -41,19 +41,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 		date = getArguments().getString("someInt");
 		time = getArguments().getString("someInt1");
 
-        rl1 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout1);
-        rl2 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout2);
-        rl3 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout3);
-        rl4 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout4);
-        rl5 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout5);
-        rl6 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout6);
-        rl7 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout7);
-        rl8 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout8);
-        rl9 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout9);
-        rl10 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout10);
+		rl1 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout1);
+		rl2 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout2);
+		rl3 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout3);
+		rl4 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout4);
+		rl5 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout5);
+		rl6 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout6);
+		rl7 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout7);
+		rl8 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout8);
+		rl9 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout9);
+		rl10 = (RelativeLayout) mainView.findViewById(R.id.relativeLayout10);
 
 
-        btnyes1 = (Button) mainView.findViewById(R.id.buttonyes1);
+		btnyes1 = (Button) mainView.findViewById(R.id.buttonyes1);
 		btnyes2 = (Button) mainView.findViewById(R.id.buttonyes2);
 		btnyes3 = (Button) mainView.findViewById(R.id.buttonyes3);
 		btnyes4 = (Button) mainView.findViewById(R.id.buttonyes4);
@@ -84,17 +84,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 		int minutes = Integer.parseInt(timeArray[1]);
 
 		Calendar calendar = Calendar.getInstance();
-		calendar.set(year, month, day - 3, hour+1, minutes + 5, 0);
+		calendar.set(year, month, day - 3, hour + 1, minutes + 5, 0);
 		setAlarm(calendar, "Shopping", "Have You Done your Shopping for the Trip?", 8);
-		calendar.set(year, month, day - 3, hour+3, minutes, 0);
+		calendar.set(year, month, day - 3, hour + 3, minutes, 0);
 		setAlarm(calendar, "Medication", "Have You Taken Necessary Medications for the Trip?", 7);
-		calendar.set(year, month, day - 2, hour+1, minutes, 0);
+		calendar.set(year, month, day - 2, hour + 1, minutes, 0);
 		setAlarm(calendar, "Plan", "Have You Planned About What To Do on the Trip?", 6);
-		calendar.set(year, month, day - 2, hour+4, minutes, 0);
+		calendar.set(year, month, day - 2, hour + 4, minutes, 0);
 		setAlarm(calendar, "Expense", "Plan the Expense for the Trip?", 4);
-		calendar.set(year, month, day - 1, hour+6, minutes, 0);
+		calendar.set(year, month, day - 1, hour + 6, minutes, 0);
 		setAlarm(calendar, "Packing", "Have You Packed the Bags for the Trip?", 3);
-		calendar.set(year, month, day - 1, hour+10, minutes, 0);
+		calendar.set(year, month, day - 1, hour + 10, minutes, 0);
 		setAlarm(calendar, "Sleep", "Have a Deep Sleep for a Fresh Morning.", 2);
 		calendar.set(year, month, day, hour - 3, minutes, 0);
 		setAlarm(calendar, "Photos", "Take Photos of Documents and Luggage", 1);
@@ -102,11 +102,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 		setAlarm(calendar, "Tickets", "Do not forget to get your Journey tickets. Again, check your luggage and documents.", 5);
 		calendar.set(year, month, day, hour - 1, minutes, 0);
 		setAlarm(calendar, "Cab", "Book a Cab or Check Timings on M-Indicator", 0);
-        calendar.set(year, month, day, hour+1, minutes, 0);
-        setAlarm(calendar, "Happy Journey","Happy Journey.Enjoy the Trip",9);
+		calendar.set(year, month, day, hour + 1, minutes, 0);
+		setAlarm(calendar, "Happy Journey", "Happy Journey.Enjoy the Trip", 9);
 
 		CardView sightsCard = (CardView) mainView.findViewById(R.id.cardviewn);
 		sightsCard.setOnClickListener(this);
+
+		CardView photosCard = (CardView) mainView.findViewById(R.id.cardview_photos);
+		photosCard.setOnClickListener(this);
 
 		return mainView;
 	}
@@ -129,6 +132,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 		switch (view.getId()) {
 			case R.id.cardviewn:
 				startActivity(new Intent(getActivity(), SightsActivity.class));
+				break;
+			case R.id.cardview_photos:
+				startActivity(new Intent(getActivity(), PhotosActivity.class));
 				break;
 		}
 

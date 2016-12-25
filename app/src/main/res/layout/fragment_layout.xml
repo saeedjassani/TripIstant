@@ -76,37 +76,37 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                        xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/relativeLayoutnd"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:descendantFocusability="blocksDescendants"
-                        android:focusableInTouchMode="false"
-                        android:orientation="vertical"
-                        android:paddingRight="6dp"
-                        android:paddingLeft="6dp"
-                        android:transitionName="relative">
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/relativeLayoutnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="blocksDescendants"
+                    android:focusableInTouchMode="false"
+                    android:orientation="vertical"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:transitionName="relative">
 
                     <android.support.v7.widget.CardView
-                            android:id="@+id/cardviewnd"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:foreground="?android:attr/selectableItemBackground"
-                            card_view:cardBackgroundColor="#cde6f4"
-                            card_view:cardCornerRadius="2dp"
-                            card_view:cardElevation="2dp"
-                            card_view:cardPreventCornerOverlap="true"
-                            card_view:cardUseCompatPadding="true">
+                        android:id="@+id/cardview_photos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        card_view:cardBackgroundColor="#cde6f4"
+                        card_view:cardCornerRadius="2dp"
+                        card_view:cardElevation="2dp"
+                        card_view:cardPreventCornerOverlap="true"
+                        card_view:cardUseCompatPadding="true">
 
                         <RelativeLayout
-                                android:id="@+id/relnd"
-                                android:layout_width="match_parent"
-                                android:layout_height="180dp"
-                                android:background="@drawable/luggage"
-                                android:gravity="center">
+                            android:id="@+id/relnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:background="@drawable/luggage"
+                            android:gravity="center">
 
                         </RelativeLayout>
                     </android.support.v7.widget.CardView>
@@ -205,18 +205,20 @@
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
 
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                android:id="@+id/relativeLayout1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
-                                android:focusableInTouchMode="false"
-                                android:orientation="vertical"
-                                android:paddingLeft="6dp"
-                                android:paddingRight="6dp"
-                                android:transitionName="relative">
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:orientation="vertical"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview1"
@@ -248,6 +250,9 @@
 
                                     <TextView
                                         android:layout_width="match_parent"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:foreground="?android:attr/selectableItemBackground"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Have You Done the Shopping for the Trip?"
@@ -266,6 +271,9 @@
                                             android:id="@+id/buttonno1"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
                                             android:text="No"/>
@@ -274,6 +282,9 @@
                                             android:id="@+id/buttonyes1"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
                                             android:text="Yes"/>
@@ -293,13 +304,12 @@
                                 android:id="@+id/relativeLayout2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview2"
@@ -350,6 +360,9 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:background="@android:color/transparent"
                                             android:text="No"/>
 
@@ -359,6 +372,9 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:text="Yes"/>
 
                                     </LinearLayout>
@@ -376,13 +392,12 @@
                                 android:id="@+id/relativeLayout3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview3"
@@ -431,6 +446,9 @@
                                         <Button
                                             android:id="@+id/buttoncheck"
                                             android:layout_width="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
@@ -439,6 +457,9 @@
                                         <Button
                                             android:id="@+id/buttonyes3"
                                             android:layout_width="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
@@ -460,13 +481,12 @@
                                 android:id="@+id/relativeLayout9"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview9"
@@ -514,6 +534,9 @@
 
                                         <Button
                                             android:id="@+id/buttondismiss"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
@@ -524,6 +547,9 @@
                                             android:id="@+id/buttonexpense"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
                                             android:text="Plan Expense"/>
@@ -543,13 +569,12 @@
                                 android:id="@+id/relativeLayout4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview4"
@@ -583,6 +608,9 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:foreground="?android:attr/selectableItemBackground"
                                         android:text="Have You Packed the Bags for the Trip?"
                                         android:textColor="#252525"
                                         android:textSize="18sp"/>
@@ -597,6 +625,9 @@
 
                                         <Button
                                             android:id="@+id/buttonno3"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
@@ -606,6 +637,9 @@
                                         <Button
                                             android:id="@+id/buttonyes4"
                                             android:layout_width="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
@@ -626,13 +660,12 @@
                                 android:id="@+id/relativeLayout5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview5"
@@ -681,6 +714,9 @@
                                         <Button
                                             android:id="@+id/buttondismiss2"
                                             android:layout_width="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
@@ -689,6 +725,9 @@
                                         <Button
                                             android:id="@+id/buttonalarm"
                                             android:layout_width="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
@@ -710,13 +749,12 @@
                                 android:id="@+id/relativeLayout6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview6"
@@ -748,6 +786,9 @@
 
                                     <TextView
                                         android:layout_width="match_parent"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:foreground="?android:attr/selectableItemBackground"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Take Photos of Documents and Luggage."
@@ -767,6 +808,9 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:background="@android:color/transparent"
                                             android:text="Take Photos"/>
 
@@ -785,13 +829,12 @@
                                 android:id="@+id/relativeLayout7"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview7"
@@ -823,6 +866,9 @@
 
                                     <TextView
                                         android:layout_width="match_parent"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:foreground="?android:attr/selectableItemBackground"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="10dp"
                                         android:text="Do Not Forget to Get Your Journey Tickets. Again, Check the Journey Luggage and Other Stuff."
@@ -841,6 +887,9 @@
                                             android:id="@+id/buttondismiss3"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_weight="1"
                                             android:background="@android:color/transparent"
                                             android:text="Dismiss"/>
@@ -860,13 +909,12 @@
                                 android:id="@+id/relativeLayout8"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview8"
@@ -917,6 +965,9 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="0.5"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:background="@android:color/transparent"
                                             android:text="m-indicator"/>
 
@@ -924,6 +975,9 @@
                                             android:id="@+id/buttoncab"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:layout_weight="0.5"
                                             android:background="@android:color/transparent"
                                             android:text="Book a Cab"/>
@@ -944,13 +998,12 @@
                                 android:id="@+id/relativeLayout10"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                android:descendantFocusability="blocksDescendants"
                                 android:focusableInTouchMode="false"
                                 android:orientation="vertical"
                                 android:paddingLeft="6dp"
                                 android:paddingRight="6dp"
-                                android:transitionName="relative">
+                                android:transitionName="relative"
+                    >
 
                     <android.support.v7.widget.CardView
                         android:id="@+id/cardview10"
@@ -1001,6 +1054,9 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1.0"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:foreground="?android:attr/selectableItemBackground"
                                             android:background="@android:color/transparent"
                                             android:text="dismiss"/>
 
