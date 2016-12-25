@@ -170,7 +170,7 @@ public class ExpenseActivity extends AppCompatActivity {
 
         budget_amount.setText(String.valueOf(databaseHelper.getBudget()));
 
-        if(databaseHelper.getBudget() < 1500){
+        if(databaseHelper.getBudget() < 1500 && databaseHelper.getBudget() != 0.0){
             String content = "Your Expense is Increasing. Low Money in Budget. Manage it in Expense.";
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 

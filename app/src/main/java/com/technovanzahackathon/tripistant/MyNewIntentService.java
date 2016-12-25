@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.provider.AlarmClock;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 
@@ -36,30 +37,91 @@ public class MyNewIntentService extends IntentService {
 				.setHintHideIcon(true)
 				.setContentIcon(R.drawable.ic_menu_share);
 
-		if (title.equals("Shopping")) {
-			Intent sendIntent = new Intent();
-			PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, sendIntent, 0);
-			builder.addAction(0, "NO", pIntent);
-		} else if (title.equals("Medication")) {
-			builder.addAction(0, "NO", null);
-		} else if (title.equals("Plan")) {
-			Intent sendIntent = new Intent(getApplicationContext(), ChecklistFragment.class);
-			PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, sendIntent, 0);
-			builder.addAction(0, "CHECKLIST", pIntent);
-		} else if (title.equals("Expense")) {
-			Intent sendIntent = new Intent(getApplicationContext(), ExpenseActivity.class);
-			PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, sendIntent, 0);
-			builder.addAction(0, "Expense", pIntent);
-		} else if (title.equals("Packing")) {
-			builder.addAction(0, "NO", null);
-		} else if (title.equals("Sleep")) {
-			builder.addAction(0, "NO", null);
-		} else if (title.equals("Photos")) {
-			Intent cameraIntent = new Intent(Intent.ACTION_VIEW, null);
-			PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, cameraIntent, 0);
-			builder.addAction(0, "Expense", pIntent);
-		} else if (title.equals("Cab")) {
-			builder.addAction(0, "Cab", null);
+		switch (title) {
+			case "Shopping": {
+                Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
+                buttonIntent.putExtra("notificationId",noticode);
+                PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent,0);
+
+                Intent intentq = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.amazon.in"));
+                PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0 , intentq, 0);
+				builder.addAction(0, "NO", pIntent);
+				builder.addAction(1, "YES", pIntent1);
+				break;
+			}
+			case "Medication": {
+                Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
+                buttonIntent.putExtra("notificationId", noticode);
+                PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent, 0);
+
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=pharmacies");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+
+                PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0, mapIntent, 0);
+                builder.addAction(0, "NO", pIntent);
+                builder.addAction(1, "YES", pIntent1);
+                break;
+            }
+			case "Plan": {
+				Intent sendIntent = new Intent(getApplicationContext(), ChecklistFragment.class);
+				PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, sendIntent, 0);
+				builder.addAction(0, "CHECKLIST", pIntent);
+                Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
+                buttonIntent.putExtra("notificationId", noticode);
+                PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent, 0);
+                builder.addAction(1, "YES", pIntent1);
+
+                break;
+			}
+			case "Expense": {
+				Intent sendIntent = new Intent(getApplicationContext(), ExpenseActivity.class);
+				PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, sendIntent, 0);
+				builder.addAction(0, "Expense", pIntent);
+
+                Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
+                buttonIntent.putExtra("notificationId", noticode);
+                PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent, 0);
+                builder.addAction(1,"Dismiss", pIntent1);
+				break;
+			}
+			case "Packing": {
+                Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
+                buttonIntent.putExtra("notificationId", noticode);
+                PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent, 0);
+
+                Intent intentq = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.amazon.in"));
+                PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0, intentq, 0);
+                builder.addAction(0, "NO", pIntent);
+                builder.addAction(1, "YES", pIntent1);
+                break;
+            }
+			case "Sleep": {
+                Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
+                buttonIntent.putExtra("notificationId", noticode);
+                PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent, 0);
+
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0, i, 0);
+                builder.addAction(0, "SET ALARM", pIntent);
+                builder.addAction(1, "DISMISS", pIntent1);
+                break;
+            }
+			case "Photos": {
+                Intent cameraIntent = new Intent("android.media.action.IMAGE_CAPTURE");
+                PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, cameraIntent, 0);
+				builder.addAction(0, "Take Photos", pIntent);
+				break;
+			}
+			case "Cab": {
+                Intent intentapp = new Intent("com.ubercab.UBUberActivity");
+                PendingIntent pIntent = PendingIntent.getActivity(MyNewIntentService.this, 0, intentapp, 0);
+                Intent intentapp1 = new Intent("com.mobond.mindicator.SplashUI");
+                PendingIntent pIntent1 = PendingIntent.getActivity(MyNewIntentService.this, 0, intentapp1, 0);
+                builder.addAction(0, "Cab", pIntent);
+                builder.addAction(1,"mindicator", pIntent1);
+                break;
+            }
 		}
 
 		builder.setContentTitle(title);
