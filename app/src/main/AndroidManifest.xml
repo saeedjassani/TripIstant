@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.technovanzahackathon.tripistant">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,31 +20,31 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".TripChecklists.ChecklistFragment"
-                android:label="Checklist"
-        />
+            android:name=".TripChecklists.ChecklistFragment"
+            android:label="Checklist"/>
         <activity
-                android:name=".TripChecklists.EditTripChecklistsActivity"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:windowSoftInputMode="stateHidden"/>
-
+            android:name=".TripChecklists.EditTripChecklistsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
-                android:name=".Expense.ExpenseActivity"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:windowSoftInputMode="stateHidden"/>
-
+            android:name=".Expense.ExpenseActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
-                android:name=".Expense.NewExpenseActivity"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:windowSoftInputMode="stateHidden"/>
-
+            android:name=".Expense.NewExpenseActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".AddTripActivity"/>
-        <activity android:name=".TripActivity"
-        />
+        <activity android:name=".TripActivity"/>
 
         <receiver android:name=".MyReceiver"/>
+
         <service android:name=".MyNewIntentService"/>
 
+        <activity
+            android:theme="@style/AppTheme.Actionbar"
+            android:name=".SightsActivity">
+        </activity>
     </application>
 
 </manifest>
