@@ -35,7 +35,7 @@ public class MyNewIntentService extends IntentService {
 		Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 		NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender()
 				.setHintHideIcon(true)
-				.setContentIcon(R.drawable.ic_menu_share);
+				.setContentIcon(R.drawable.home);
 
 		switch (title) {
 			case "Shopping": {
@@ -87,7 +87,7 @@ public class MyNewIntentService extends IntentService {
 			}
 			case "Packing": {
                 Intent buttonIntent = new Intent(getApplicationContext(), AutoDismissReceiver.class);
-                buttonIntent.putExtra("notificationId", noticode);
+                buttonIntent.putExtra("notificationId", 0);
                 PendingIntent pIntent1 = PendingIntent.getBroadcast(getApplicationContext(), 0, buttonIntent, 0);
 
                 Intent intentq = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.amazon.in"));
@@ -126,7 +126,7 @@ public class MyNewIntentService extends IntentService {
 
 		builder.setContentTitle(title);
 		builder.setContentText(content);
-		builder.setSmallIcon(R.drawable.ic_menu_share);
+		builder.setSmallIcon(R.drawable.home);
 		builder.setSound(soundUri);
 		builder.extend(wearableExtender);
 

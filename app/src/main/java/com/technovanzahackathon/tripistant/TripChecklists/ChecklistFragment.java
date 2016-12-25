@@ -83,7 +83,6 @@ public class ChecklistFragment extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_checklist);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_menu_share);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         note1 = (Trips) getIntent().getSerializableExtra("NEW_TRIP");

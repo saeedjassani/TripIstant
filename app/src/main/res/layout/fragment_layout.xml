@@ -75,6 +75,43 @@
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
 
+                <RelativeLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/relativeLayoutnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants"
+                        android:focusableInTouchMode="false"
+                        android:orientation="vertical"
+                        android:paddingRight="6dp"
+                        android:paddingLeft="6dp"
+                        android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardviewnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardBackgroundColor="#cde6f4"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/relnd"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                android:background="@drawable/luggage"
+                                android:gravity="center">
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
                 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                                 android:id="@+id/relativeLayout"

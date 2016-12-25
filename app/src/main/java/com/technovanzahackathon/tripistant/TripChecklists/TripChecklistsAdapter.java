@@ -85,7 +85,7 @@ public class TripChecklistsAdapter extends RecyclerView.Adapter<TripChecklistsAd
         holder.textUpdated.setText(note.getUpdated_at());
 
         if(note.getLock_status() == 1){
-            holder.lock.setImageResource(R.drawable.ic_menu_share);
+            holder.lock.setImageResource(R.drawable.lock);
             holder.lock.setVisibility(View.VISIBLE);
         }else if(note.getLock_status() == 0){
             holder.lock.setVisibility(View.INVISIBLE);

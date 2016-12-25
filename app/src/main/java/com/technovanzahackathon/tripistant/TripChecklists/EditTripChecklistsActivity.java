@@ -186,10 +186,10 @@ public class EditTripChecklistsActivity extends AppCompatActivity implements Che
         getMenuInflater().inflate(R.menu.menu_edit_checklist, menu);
 
         if(note.getLock_status() == 1){
-            menu.findItem(R.id.lock).setIcon(getResources().getDrawable(R.drawable.ic_menu_share));
+            menu.findItem(R.id.lock).setIcon(getResources().getDrawable(R.drawable.lock));
             return true;
         }
-        menu.findItem(R.id.lock).setIcon(getResources().getDrawable(R.drawable.ic_menu_share));
+        menu.findItem(R.id.lock).setIcon(getResources().getDrawable(R.drawable.lock_open_outline));
 
         return true;
     }
@@ -205,13 +205,13 @@ public class EditTripChecklistsActivity extends AppCompatActivity implements Che
             case R.id.lock:
                 if(databaseHelper.isPasscodeSet()) {
                     if (note.getLock_status() == 0) {
-                        item.setIcon(getResources().getDrawable(R.drawable.ic_menu_share));
+                        item.setIcon(getResources().getDrawable(R.drawable.lock));
                         lock_status = 1;
                         note.setLock_status(lock_status);
                         Toast.makeText(getApplicationContext(),"Locked", Toast.LENGTH_SHORT).show();
                         return true;
                     } else {
-                        item.setIcon(getResources().getDrawable(R.drawable.ic_menu_share));
+                        item.setIcon(getResources().getDrawable(R.drawable.lock_open_outline));
                         lock_status = 0;
                         note.setLock_status(lock_status);
                         Toast.makeText(getApplicationContext(),"Unlocked", Toast.LENGTH_SHORT).show();
@@ -241,11 +241,11 @@ public class EditTripChecklistsActivity extends AppCompatActivity implements Che
                 NotificationCompat.WearableExtender wearableExtender =
                         new NotificationCompat.WearableExtender()
                                 .setHintHideIcon(true)
-                                .setContentIcon(R.drawable.ic_menu_send);
+                                .setContentIcon(R.drawable.home);
 
                 NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(EditTripChecklistsActivity.this)
-                                .setSmallIcon(R.drawable.ic_menu_send)
+                                .setSmallIcon(R.drawable.home)
                                 .setContentTitle(note.getTitle())
                                 .setContentText(note.getContent())
                                 .setColor(note.getColor())

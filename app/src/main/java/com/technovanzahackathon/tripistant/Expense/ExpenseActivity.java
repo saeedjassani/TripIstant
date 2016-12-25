@@ -177,11 +177,11 @@ public class ExpenseActivity extends AppCompatActivity {
             Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender()
                     .setHintHideIcon(true)
-                    .setContentIcon(R.drawable.ic_menu_share);
+                    .setContentIcon(R.drawable.home);
 
             builder.setContentTitle("Expense");
             builder.setContentText(content);
-            builder.setSmallIcon(R.drawable.ic_menu_share);
+            builder.setSmallIcon(R.drawable.home);
             builder.setSound(soundUri);
             builder.extend(wearableExtender);
 
