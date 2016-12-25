@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar_checklist"
+            android:minHeight="?attr/actionBarSize"
+            android:elevation="6dp"
+            android:fitsSystemWindows="true"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/listNotes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="2.5dp"
+                android:paddingRight="2.5dp"
+                android:layout_below="@+id/toolbar_checklist"
+                android:adjustViewBounds="true" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="No Checklists"
+                android:textSize="22dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textEmpty" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_below="@+id/textEmpty"
+                android:text="Click the + Button to Add Checklist"
+                android:textSize="13dp"
+                android:paddingTop="50dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textEmpty1" />
+
+        <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|end"
+                android:id="@+id/clayout">
+
+            <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_menu_share"
+                    android:tag="bg_tint_accent_color_selector_lighter"
+                    app:elevation="6dp"
+                    app:pressedTranslationZ="12dp" />
+
+        </android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+
+</LinearLayout>

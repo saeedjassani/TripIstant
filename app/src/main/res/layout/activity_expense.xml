@@ -1,0 +1,135 @@
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbar_note"
+                android:minHeight="?attr/actionBarSize"
+                android:elevation="6dp"
+                android:fitsSystemWindows="true"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                <TextView
+                        android:id="@+id/add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Budget"
+                        android:layout_weight="0.9"/>
+
+                <Button
+                        android:id="@+id/add_expense"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|right|end"
+                        android:layout_weight="0.1"
+                        android:background="@android:color/transparent"
+                        android:text="Add/Edit Budget"
+                        android:textColor="#005e91"/>
+
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/budget_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="32sp"
+                    android:textColor="#007922"
+                    android:layout_marginTop="1dp"
+                    android:text="0"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+                android:id="@+id/framemain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/listNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="2.5dp"
+                    android:paddingRight="2.5dp"
+                    android:layout_below="@+id/toolbar_main"
+                    android:adjustViewBounds="true" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="No Expenses Added"
+                    android:textSize="22dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/textEmpty" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_below="@+id/textEmpty"
+                    android:text="Click + Button to Add Expense"
+                    android:textSize="13dp"
+                    android:paddingTop="50dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/textEmpty1" />
+
+            <android.support.design.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom|end"
+                    android:id="@+id/clayout">
+
+                <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        android:src="@drawable/ic_add"
+                        android:tag="bg_tint_accent_color_selector_lighter"
+                        app:elevation="6dp"
+                        app:pressedTranslationZ="12dp" />
+
+
+            </android.support.design.widget.CoordinatorLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/lock"
+          android:title="Lock"
+          android:icon="@drawable/ic_menu_send"
+          app:showAsAction="always" />
+
+    <item android:id="@+id/share_note"
+          android:title="Share Checklist"
+          android:icon="@drawable/ic_menu_share"
+          app:showAsAction="always" />
+
+    <item android:id="@+id/delete_note"
+          android:title="Delete Checklist"
+          app:showAsAction="never" />
+
+    <item android:id="@+id/savetxt"
+          app:showAsAction="never"
+          android:title="Export as .txt" />
+
+    <item android:id="@+id/notify"
+          app:showAsAction="never"
+          android:title="Show As Notification" />
+
+
+
+</menu>

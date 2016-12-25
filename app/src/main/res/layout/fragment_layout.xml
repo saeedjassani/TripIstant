@@ -1,0 +1,854 @@
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:fitsSystemWindows="true"
+        android:id="@+id/coordinating_wall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayoutn"
+                                android:padding="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardviewn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardBackgroundColor="#cde6f4"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/reln"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                android:background="@drawable/minimal"
+                                android:gravity="center">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="vertical"
+                                          android:weightSum="1"
+                                          android:gravity="center_vertical"
+                                          android:layout_marginTop="5dp">
+
+                                <TextView android:layout_width="wrap_content"
+                                          android:layout_height="wrap_content"
+                                    android:text="Manali Sights"
+                                          android:textColor="@android:color/white"
+                                          android:gravity="center_horizontal"
+                                          android:layout_gravity="center_horizontal"
+                                    android:textSize="30sp"/>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/relativeLayout"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
+                        android:orientation="vertical"
+                        android:focusableInTouchMode="false"
+                        android:descendantFocusability="blocksDescendants"
+                        android:transitionName="relative">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="#cde6f4"
+                    card_view:cardPreventCornerOverlap="true"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:cardElevation="2dp"
+                    card_view:contentPadding="8dp"
+                    card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                    android:id="@+id/rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.3"
+
+                    android:layout_marginLeft="20dp">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Manali, India"
+                                android:paddingLeft="10dp"
+                                android:textSize="24sp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="December 25, 2016"
+                        android:paddingLeft="15dp"
+                        android:textColor="#252525"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="70sp"
+                        android:padding="20dp"
+                        android:text="3\u00B0C"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                android:layout_marginTop="10dp">
+
+                        <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:src="@drawable/windy"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Windy"
+                            android:textSize="16dp"
+                            android:layout_marginLeft="30dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/relativeLayout1"
+                        android:paddingRight="6dp"
+                        android:paddingLeft="6dp"
+                        android:orientation="vertical"
+                        android:focusableInTouchMode="false"
+                        android:descendantFocusability="blocksDescendants"
+                        android:transitionName="relative">
+
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cardview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardPreventCornerOverlap="true"
+                    card_view:cardCornerRadius="2dp"
+                    card_view:cardElevation="2dp"
+                    card_view:contentPadding="8dp"
+                    card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                        android:id="@+id/rel1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:weightSum="1">
+
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_height="wrap_content"
+                                      android:orientation="vertical"
+                                      android:layout_weight="0.3">
+
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:text="Have You Done the Shopping for the Trip?"
+                                android:textSize="18sp"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="#252525"/>
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp">
+
+                                <Button
+                                        android:id="@+id/buttonno1"
+                                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:text="No"
+                                        android:background="@android:color/transparent"
+                                    android:layout_weight="0.5"/>
+
+                                <Button android:id="@+id/buttonyes1"
+                                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                        android:text="Yes"
+                                        android:background="@android:color/transparent"
+                                        android:layout_weight="0.5"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout2"
+                                android:paddingLeft="6dp"
+                                android:paddingRight="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Have You Taken Necessary Medications for the Trip?"
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/buttonno2"
+                                                android:text="No"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/buttonyes2"
+                                                android:text="Yes"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout3"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Have You Planned About &quot;What To Do&quot; for Trip?"
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Make Checklist"
+                                                android:id="@+id/buttoncheck"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Yes"
+                                                android:id="@+id/buttonyes3"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout9"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Plan the Expense for the Trip?"
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Dismiss"
+                                                android:id="@+id/buttondismiss"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Plan Expense"
+                                                android:id="@+id/buttonexpense"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout4"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Have You Packed the Bags for the Trip?"
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="No"
+                                                android:id="@+id/buttonno3"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Yes"
+                                                android:id="@+id/buttonyes4"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout5"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Take a Deep Sleep to getup Early Morning Fresh."
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Dismiss"
+                                                android:id="@+id/buttondismiss2"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Set Alarm"
+                                                android:id="@+id/buttonalarm"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout6"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Take Photos of Documents and Luggage."
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="Take Photos"
+                                                android:id="@+id/buttonphoto"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="1"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout7"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Do Not Forget to Get Your Journey Tickets. Again, Check the Journey Luggage and Other Stuff."
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/buttondismiss3"
+                                                android:text="Dismiss"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="1"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout8"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Book a Cab or Check Other Travel Timings to Reach Source."
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/buttonmindicator"
+                                                android:text="m-indicator"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/buttoncab"
+                                                android:text="Book a Cab"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="0.5"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/relativeLayout10"
+                                android:paddingRight="6dp"
+                                android:paddingLeft="6dp"
+                                android:orientation="vertical"
+                                android:focusableInTouchMode="false"
+                                android:descendantFocusability="blocksDescendants"
+                                android:transitionName="relative">
+
+                    <android.support.v7.widget.CardView
+                            android:id="@+id/cardview10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            card_view:cardPreventCornerOverlap="true"
+                            card_view:cardCornerRadius="2dp"
+                            card_view:cardElevation="2dp"
+                            card_view:contentPadding="8dp"
+                            card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                                android:id="@+id/rel10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                          android:orientation="horizontal"
+                                          android:weightSum="1">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:layout_height="wrap_content"
+                                              android:orientation="vertical"
+                                              android:layout_weight="0.3">
+
+                                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                              android:text="Happy Journey. You Can Manage your Expense and Checklists from the Below Sections."
+                                              android:textSize="18sp"
+                                              android:layout_marginLeft="10dp"
+                                              android:textColor="#252525"/>
+
+                                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                  android:orientation="horizontal"
+                                                  android:weightSum="1"
+                                                  android:layout_marginTop="5dp"
+                                                  android:layout_marginRight="10dp">
+
+                                        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:text="dismiss"
+                                                android:id="@+id/buttondismiss4"
+                                                android:background="@android:color/transparent"
+                                                android:layout_weight="1.0"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
